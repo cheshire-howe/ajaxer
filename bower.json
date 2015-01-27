@@ -1,0 +1,21 @@
+{
+  "name": "ajax-site",
+  "version": "0.0.1",
+  "authors": [
+    "cheshire_howe <joshzoff@gmail.com>"
+  ],
+  "description": "WebApp",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "static/libs",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.2"
+  }
+}
