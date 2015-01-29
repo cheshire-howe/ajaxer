@@ -3,18 +3,20 @@
 {% block content %}
     <p>Hello, World!</p>
     <div id="dynamic-content"></div>
-    <button class="linker" data-page="subbed" data-place="#dynamic-content">Click Me</button>
-    <button class="linker" data-page="dubbed" data-place="#dynamic-content">Click Me</button>
-    <button class="linker"
-        data-method="yes"
-        data-page="pancan"
+    <button href="dubbed"
+        class="linker"
         data-place="#dynamic-content">
-        Click Me
-    </button>
-    <button class="linker"
-        data-method="yes"
-        data-page="array"
+        Click Me</button>
+    <button href="subbed"
+        class="linker"
         data-place="#dynamic-content">
-        Click Me
-    </button>
+        Click Me</button>
+    <button href="away"
+        class="linker"
+        data-place="#dynamic-content">
+        Click Me</button>
+    <button href="home"
+        class="linker"
+        data-place="#dynamic-content">
+        Click Me</button>
 {% end %}

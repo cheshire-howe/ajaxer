@@ -1,13 +1,24 @@
 (function() {
-    $('.linker').click(function() {
-        var page = $(this).data('page');
+    $('.linker').click(function(e) {
+        e.preventDefault();
+        var href = $(this).attr('href').split('/');
+        var controller = href.shift();
+        var action = href[0] ? href.shift() : "";
+        var params = href[0] ? href : "";
         var place = $(this).data('place');
-        var method = $(this).data('method') ? $(this).data('method') : ""
-        linker(page, place, method);
+        linker(controller, action, params, place);
     });
 
-    function linker(page, place, method) {
-        $.get("/ajax/" + page + "/" + method, function(data) {
+    function linker(controller, action, params, place) {
+        url = "/ajax/" + controller;
+        if (action)
+            url += "/" + action;
+        if (params) {
+            $.each(params, function(i) {
+                url += "/" + params[i];
+            });
+        }
+        $.get(url, function(data) {
             $(place).html(data)
         });
     }

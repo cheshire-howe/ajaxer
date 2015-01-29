@@ -7,8 +7,11 @@ from itertools import izip
 from matplotlib.finance import candlestick_ochl
 
 
-def pancan():
-    symbol = "GOOG"
+def pancan(*args):
+    if args[0] is not None:
+        symbol = args[0]
+    else:
+        symbol = "GOOG"
     # get the data on a symbol
     data = get_data_yahoo(symbol, datetime.now() - timedelta(days=90))
     close_price = data['Adj Close']
@@ -28,9 +31,17 @@ def pancan():
     plt.clf()
 
 
-def add():
-    return 2
+def add(*args):
+    if args[0] is not None:
+        num = 0
+        for a in args:
+            try:
+                num = num + int(a)
+            except:
+                return "Those aren't numbers"
+        return num
+    return 1 + 1
 
 
-def array():
-    return ['Hey', 'You', 'There']
+def array(*args):
+    return ['Hey', 'You', 'There', 'I\'m', 'an', 'Array']
